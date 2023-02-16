@@ -50,8 +50,8 @@ body {
 
 .container {
     width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -96,8 +96,11 @@ body {
 /*------------------- HEADER----------------- */
 
 .header {
+    position: absolute;
+    width: 100%;
     padding-top: 32px;
-    background-color: gray;
+    padding-bottom: 32px;
+    
 }
 .header-container {
     display: flex;
@@ -107,10 +110,11 @@ body {
 .header-navigation {
     display: flex;
     align-items: center;
+    margin-right: auto;
 }
 
 .header-logo {
-    margin-right: 71px;
+    margin-right: 130px;
 }
 
 .header-list {
@@ -152,24 +156,65 @@ body {
 
 .header-btn {
     padding-top: 12px;
-    padding-bottom: 12;
-    padding-left: 20;
-    padding-right: 20;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
     border: 1px solid #FF6C00;
     border-radius: 25px;
+    background-color: transparent;
     color: var(--main-btn-color);
 }
 
 /*------------------- HERO----------------- */
 
 .hero {
+    
+
     background-color: #797c8a;
 }
+.hero-container {
+    display: flex;
+    
 
-.hero-list {}
+}
+.hero-soc {
+    width: 100px;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 27px;
+    padding-bottom: 40px;
+}
+    
+
+
+.hero-list {
+    
+    transform: rotate(-90deg) translate(1%);
+    transform-origin: bottom left ;
+    
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+.hero-list::before {
+    content: "";
+    width: 60px;
+    height: 1px;
+    background-color: var(--second-title-color);
+
+}
 
 .hero-item {}
 
+.hero-wrap {
+    flex-grow: 1;
+    padding: 272px 526px 208px 100px;
+    background-image: url(../images/Slider.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
 .hero-link {
     font-weight: 600;
     font-size: 11px;
@@ -183,15 +228,27 @@ body {
 }
 
 .hero-pre-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     color: rgba(157, 164, 189, 0.6);
 }
 
 .hero-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-family: 'Raleway', sans-serif;
     font-size: 72px;
     line-height: 1.18;
     letter-spacing: 0.05em;
     color: var(--main-title-color);
+}
+.hero-pre-title::before {
+    content: "";
+    width: 60px;
+    height: 1px;
+    
+    background-color: rgba(157, 164, 189, 0.6);;
 }
 
 .hero-after-title {
@@ -204,23 +261,50 @@ body {
 
 /*------------------- ABOUT----------------- */
 
-.about {}
+.about {
+    padding: 120px 0;
 
-.about-list {}
+}
+.about-container {
+    display: flex;
+    gap: 30px;
+}
+
+.about-list {
+    display: flex;
+    gap: 30px;
+}
 
 .about-item {}
 
 .about-pic {}
 
+.about-content {
+    max-width: 470px;
+}
+
 .about-pre-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
     color: #303030;
+}
+.about-pre-title::before {
+    content: "";
+    width: 60px;
+    height: 1px;
+    display: block;
+    background-color:var(--second-title-color) ;
 }
 
 .about-title {
+    margin-bottom: 20px;
     color: var(--second-title-color);
 }
 
 .about-after-title {
+    margin-bottom: 20px;
     font-size: 18px;
     line-height: 1.67;
     letter-spacing: 0.02em;
@@ -228,6 +312,7 @@ body {
 }
 
 .about-text {
+    margin-bottom: 42px;
     font-size: 14px;
     line-height: 1.86;
     letter-spacing: 0.02em;
@@ -235,26 +320,85 @@ body {
 }
 
 .about-btn {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid #FF6C00;
+    border-radius: 25px;
+    background-color: transparent;
+        
     color: var(--second-btn-color);
 }
 
 /*------------------- PRICES----------------- */
 
 .prices {
+    padding: 120px 0;
+    background-image: url(../images/Услуги\ и\ цены\ \(1\).jpg);
+    background-repeat: no-repeat
+    ;
+    background-size: contain;
+    background-position: center;
     background-color: #303030;
 }
 
 .prices-pre-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
     color: rgba(157, 164, 189, 0.6);
 }
+.prices-pre-title::before {
+    content: "";
+    width: 60px;
+    height: 1px;
+    background-color: rgba(157, 164, 189, 0.6);
+ }
 
 .prices-title {
+    margin-bottom: 44px;
     color: var(--main-title-color);
 }
 
-.prices-list {}
+.prices-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 44px;
+    
 
-.prices-item {}
+}
+
+.prices-list {
+    width: calc((100%-30px)/2);
+    padding: 30px 20px;
+}
+.prices-list:first-child {
+    background-image: linear-gradient(180deg, #171A24 0%, rgba(23, 26, 36, 0.2) 100%);
+}
+.prices-list:last-child {
+    background-image: linear-gradient(180deg, #090B13 0%, rgba(9, 11, 19, 0.2) 100%);
+}
+
+.prices-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+}
+.prices-item::before {
+    content: "";
+    width: 100px;
+    height: 1px;
+    background-color: rgba(157, 164, 189, 0.12);
+    flex-grow: 1;
+    
+}
+.prices-item + .prices-item {
+    margin-top: 20px;
+}
 
 .prices-item-text {
     font-size: 18px;
@@ -262,8 +406,22 @@ body {
     letter-spacing: 0.02em;
     color: #9da4bd;
 }
+.prices-item-text:first-child {
+    order: -1;
+
+}
+
 
 .prices-btn {
+    margin: 0 auto ;
+    display: block;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid #FF6C00;
+    border-radius: 25px;
+    background-color: transparent;
     color: #ffffff;
 }
 
